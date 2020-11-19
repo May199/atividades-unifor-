@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>Trabalho - Desenvolvimento de Software</title>
+    <meta charset = "UTF-8">
+<body>
+    <p>Para visualizar os resultados aperte F12.</p>
+</body>
+<script>
+var n, antecessor=0, sucessor=1, base, num, soma=0, div=0, cont, a, b, resto; 
+
+n = parseInt(prompt("Digite um número inteiro: ")); 
+a = parseInt(prompt("Digite um 2° número inteiro: ")); 
+b = parseInt(prompt("Digite um último número inteiro: "));
+base = parseInt(prompt("Foneça uma base para a sequência de Fibonacci: ")); 
+
+conjunto = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]; resultado = [];
+
+//Somatório: Soma de um conjunto de números.
+for (i=0; i < conjunto.length; i++){
+    soma += conjunto[i];
+}
+console.log("Soma do conjunto: "+conjunto+" é: "+soma);
+
+//Máximo divisor comum: O máximo divisor comum (mdc) de dois inteiros a, b é o maior número inteiro que divide a e b.
+while(b != 0){
+    resto = a%b; a = b; b = resto; mdc = a; 
+}
+console.log("Máximo divisor comum entre os números informados é: "+mdc);
+
+//Número é primo: Um número inteiro positivo n é primo se for divisível apenas por 1 e por n.
+for (cont=1; cont<=n; cont++){
+    if (n%cont==0)
+        div++;
+}
+if(div==2){
+    console.log('O número: '+n+' é primo.');
+}else{
+    console.log('O número: '+n+' não é primo.');
+}
+
+//Fibonacci: onde N > 1. Os primeiros termos são: 0, 1, 1, 2, 3, 5, 8, 13...
+if (base <=2)
+    num = base -1;
+else
+    for(i=0; i <= base; i++){
+        resultado[0] = 0; resultado[i] = num; num = antecessor+sucessor; sucessor = antecessor; antecessor = num;
+
+    }
+console.log("Fibonacci: onde N > 1. Os primeiros termos são: 0, 1, 1, 2, 3, 5, 8, 13...");
+console.log(resultado);
+
+</script>
+</head>
+</html>
