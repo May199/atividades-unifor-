@@ -9,5 +9,5 @@ public class Pagamento {
 	public double getValorPago() {
 		return valorPago;
 	}
-	
+	 
 }

@@ -14,10 +14,10 @@ public class ControladorRealizarVenda {
 		if (produto != null){
 			venda.criarItemVenda(quantidade, produto);
 		}
-	}
+	} 
 	
 	public void registrarPagamento(double valorFornecido){
 		venda.efetuarPagamento(valorFornecido);
 	}
-	
+	 
 }
