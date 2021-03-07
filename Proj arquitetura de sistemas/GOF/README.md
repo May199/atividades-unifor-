@@ -1,7 +1,8 @@
 ## Atividades Unifor Padrões GOF
 
 > Os padrões utilizado foram o Templade Method e o Strategy
-> Estrutura da classe Veiculo utilizado os padrões GOF Templade Method e o Strategy. Os mesmos padrões são utilizado em >outras classes do projeto. 
+
+> Estrutura da classe Veiculo utilizado os padrões GOF Templade Method e o Strategy. Os mesmos padrões são utilizado em outras classes do projeto. 
 
 ``` Java
     public abstract class Veiculo{
@@ -32,7 +33,7 @@
 ```
 
 ### Templade Method 
->Definir o esqueleto de um algoritmodentro de uma operaçãoem uma classe X, deixando alguns passos para serem preenchidos >pelas subclasses de X. Permite que subclasses redefinam certos passos de um algoritmo sem alterar a estrutura desse >algoritmo.
+>Definir o esqueleto de um algoritmodentro de uma operaçãoem uma classe X, deixando alguns passos para serem preenchidos pelas subclasses de X. Permite que subclasses redefinam certos passos de um algoritmo sem alterar a estrutura desse algoritmo.
 
 ### Strategy
->Definir   umafamília   de   algoritmos,encapsularcada um, e fazê-losintercambiáveis. Essepadrão   permite   que   o   >algoritmovarieindependentementedos clientes que o utilizam.
+>Definir   umafamília   de   algoritmos,encapsularcada um, e fazê-losintercambiáveis. Essepadrão   permite   que   o   algoritmovarieindependentementedos clientes que o utilizam.
