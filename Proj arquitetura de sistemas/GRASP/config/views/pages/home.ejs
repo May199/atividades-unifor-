@@ -1,0 +1,34 @@
+<%- contentFor('body') %>
+
+<form method="POST" action="/" name="realizar_pedido">
+    <div class="">
+        <input type="text"  placeholder="código do produto" name="produto" />
+        <input type="text"  placeholder="quantidade" name="quantidade" />
+        <button id="add" type="submit">Add Item</button>
+    </div>
+</form>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Código do Produto</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Preço Unitario</td>
+            <td>Subtotal</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% itensVenda.map((item) => { %>
+        <tr>
+            <td> <%= item.getProduto().getCodigo_barra() %> </td>
+            <td> <%= item.getProduto().getDescricao() %> </td>
+            <td> <%= item.getQuantidade() %> </td>
+            <td> <%= item.getProduto().getPreco() %> </td>
+            <td> <%= item.calcularSubTotal() %></td>
+        </tr>
+
+    <% }) %>
+
+    </tbody>
+ 
+</table>
