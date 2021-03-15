@@ -7,6 +7,7 @@
         <button id="add" type="submit">Add Item</button>
     </div>
 </form>
+
 <table border="1">
     <thead>
         <tr>
@@ -23,12 +24,11 @@
             <td> <%= item.getProduto().getCodigo_barra() %> </td>
             <td> <%= item.getProduto().getDescricao() %> </td>
             <td> <%= item.getQuantidade() %> </td>
-            <td> <%= item.getProduto().getPreco() %> </td>
+            <td> <%= item.getProduto().getPreco() %> </td> 
             <td> <%= item.calcularSubTotal() %></td>
         </tr>
 
     <% }) %>
 
     </tbody>
- 
 </table>

@@ -18,6 +18,7 @@ class Venda {
     return total;
   }
 
+  //Composite
   criarItemVenda(quantidade, produto) {
     let item = new ItemVenda(quantidade, produto);
     this.#itensVenda.push(item);
@@ -30,14 +31,5 @@ class Venda {
   getDataVenda() {
     return this.#dataVenda;
   }
-
-  
-  // getTroco() {
-  //   return pagamento.getValorPago() - getTotal();
-  // }
-
-  // efetuarPagamento() {
-  //   pagamento = new Pagamento(valorRecebido);
-  // }
 }
 module.exports = Venda;

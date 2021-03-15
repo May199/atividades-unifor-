@@ -12,7 +12,7 @@ module.exports = app => {
         const {quantidade} = req.body;
 
         const entrada1 = produto;
-        const entrada2 = quantidade;
+        const entrada2 = quantidade; 
 
         controlador.addItem(entrada1, entrada2);
 

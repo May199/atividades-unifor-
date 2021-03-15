@@ -14,10 +14,12 @@ class ControladorRealizarVenda {
     return this.#venda;
   }
 
+  //Composite
   addItem(codigo_barras, quantidade) {
     let produto = this.#catalogo.consultarProdutos(codigo_barras);
     if (produto) this.#venda.criarItemVenda(quantidade, produto);
   }
+
 }
 
 module.exports = new ControladorRealizarVenda(); 
