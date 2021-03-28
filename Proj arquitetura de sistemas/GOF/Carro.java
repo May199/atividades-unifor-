@@ -1,5 +1,6 @@
 public class Carro extends Veiculo{
     private int num_portas;
+    
     public Carro (String nome_veiculo, int qtd_disponivel, double qlm_rodados, int num_portas){
         super(nome_veiculo, qtd_disponivel, qlm_rodados);
         this.num_portas = num_portas;

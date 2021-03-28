@@ -1,8 +1,59 @@
 ## Atividades Unifor Padrões GOF
 
-> Os padrões utilizado foram o Templade Method e o Strategy
+> Os padrões utilizado foram o Templade Method, Strategy e Iterator
 
-> Estrutura da classe Veiculo utilizado os padrões GOF Templade Method e o Strategy. Os mesmos padrões são utilizado em outras classes do projeto. 
+> Estrutura da classe Veiculo utilizado os padrões GOF. Os mesmos padrões podem ser utilizado em outras classes do projeto. 
+
+### Exemplo Iterator
+
+``` Java
+
+public interface Iterator {
+    int qtdMotos(); 
+    double menorQLM(); 
+}
+public class Locacao implements Iterator{
+
+    public Veiculo[] vetorVeiculo;
+
+
+    public Locacao(Veiculo[] vetorVeiculo){
+        this.vetorVeiculo = vetorVeiculo;
+    }
+    //Padrão Template onde aguarda de outra classe, no caso a classe principal main a lista de veiculos
+    public Veiculo[] getVetorVeiculo(){
+        return vetorVeiculo;
+    }
+    public void setVetorVeiculo(Veiculo[] vetorVeiculo){
+        this.vetorVeiculo = vetorVeiculo;
+    }
+
+    //Padrão Iterator onde as classes menorQLM() e qtdMotos() da classe Iterator irão percorrer pelo objeto Veiculo para saber a menor quilometragem e quantas motos, e retorna essa informação pela variavel aux implementada em ambas as classes.
+
+    @Override
+    public double menorQLM(){
+        double aux = vetorVeiculo[0].getQlm_rodados();
+
+        for (int i = 0; i < vetorVeiculo.length; i++){
+            if(vetorVeiculo[i].getQlm_rodados() < aux){
+                aux = vetorVeiculo[i].getQlm_rodados();
+            }
+        }
+        return aux;
+    }
+    @Override
+    public int qtdMotos(){
+        int aux = 0;
+        
+        for (int i = 0; i < vetorVeiculo.length; i++){
+            if (vetorVeiculo[i] instanceof Moto){
+                aux++;
+            }
+        }return aux;
+    }
+
+}
+```
 
 ``` Java
     public abstract class Veiculo{
@@ -82,7 +133,8 @@
     }
 
 ```
-
+### Iterator
+>Percorrer seqüencialmente os itens de um objeto agregado, sem expor sua representação interna aos clientes. 
 ### Templade Method 
 >Definir o esqueleto de um algoritmodentro de uma operaçãoem uma classe X, deixando alguns passos para serem preenchidos pelas subclasses de X. Permite que subclasses redefinam certos passos de um algoritmo sem alterar a estrutura desse algoritmo.
 

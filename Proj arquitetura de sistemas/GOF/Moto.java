@@ -1,5 +1,6 @@
 public class Moto extends Veiculo{
     private boolean tipo_moto;
+    
     public Moto (String nome_veiculo, int qtd_disponivel, double qlm_rodados, boolean tipo_moto){
         super(nome_veiculo, qtd_disponivel, qlm_rodados);
         this.tipo_moto = tipo_moto;
