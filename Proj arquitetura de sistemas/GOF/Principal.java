@@ -5,9 +5,8 @@ public class Principal {
         Scanner s = new Scanner(System.in);
 
 
-
         System.out.println("Informe a quantidade de veiculos: ");
-        int qtd = s.nextInt();
+        int qtd = 5;
 
         Veiculo[] vetorVeiculo = new Veiculo[qtd];
 
@@ -39,8 +38,22 @@ public class Principal {
         }
 
         Locacao locacao = new Locacao(vetorVeiculo);
-        System.out.println(locacao.menorQLM());
-        System.out.println(locacao.qtdMotos());
+
+        double menorQLM = locacao.getVetorVeiculo()[0].getQlm_rodados();
+        int qtdMotos = 0;
+    
+        for(Veiculo veiculo : locacao){
+            if(veiculo.getQlm_rodados() < menorQLM){
+                menorQLM = veiculo.getQlm_rodados();
+            }
+            if(veiculo instanceof Moto){
+                qtdMotos++;
+            }
+        }
+        System.out.println(menorQLM);
+        System.out.println(qtdMotos);
+
         s.close();
     }
+    
 }

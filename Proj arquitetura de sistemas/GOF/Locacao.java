@@ -1,6 +1,7 @@
+import java.util.Iterator;
 // Exemplo de implementação Iterator
 
-public class Locacao implements Iterator{
+public class Locacao implements Iterable<Veiculo>{
 
     public Veiculo[] vetorVeiculo;
 
@@ -20,25 +21,8 @@ public class Locacao implements Iterator{
     //quilometro e quantas motos e retorna essa informação pela variavel aux implementada em ambas as classes.
 
     @Override
-    public double menorQLM(){
-        double aux = vetorVeiculo[0].getQlm_rodados();
-
-        for (int i = 0; i < vetorVeiculo.length; i++){
-            if(vetorVeiculo[i].getQlm_rodados() < aux){
-                aux = vetorVeiculo[i].getQlm_rodados();
-            }
-        }
-        return aux;
-    }
-    @Override
-    public int qtdMotos(){
-        int aux = 0;
-        
-        for (int i = 0; i < vetorVeiculo.length; i++){
-            if (vetorVeiculo[i] instanceof Moto){
-                aux++;
-            }
-        }return aux;
+    public Iterator<Veiculo> iterator(){
+        return new LocacaoIterator(this.vetorVeiculo);
     }
 
 }
