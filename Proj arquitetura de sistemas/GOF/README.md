@@ -4,15 +4,52 @@
 
 > Estrutura da classe Veiculo utilizado os padrões GOF. Os mesmos padrões podem ser utilizado em outras classes do projeto. 
 
+### Equipe 
+
+- [x] Emanuelle Neves do Nascimento - 2015672
+- [X] Jacson de Sousa Rodrigues - 2012901
+
 ### Exemplo Iterator
 
 ``` Java
-
-public interface Iterator {
-    int qtdMotos(); 
-    double menorQLM(); 
+// Classe Iterator.java
+public interface Iterator{
+    boolean hasNext();
+    Object next();
 }
-public class Locacao implements Iterator{
+// Classe LocacaoIterator.java
+import java.util.Iterator;
+
+public class LocacaoIterator implements Iterator<Veiculo>{
+
+    private Veiculo[] vetorVeiculo;
+    private int index;
+
+    public LocacaoIterator(Veiculo[] vetorVeiculo){
+        this.vetorVeiculo = vetorVeiculo;
+        this.index = 0;
+    }
+    @Override
+    public boolean hasNext(){
+        if(vetorVeiculo == null || vetorVeiculo.length == index){
+            return false;
+        }
+        return vetorVeiculo[index] != null;
+    }
+
+    @Override
+    public Veiculo next(){
+        Veiculo prox = vetorVeiculo[index];
+        index++;
+
+        return prox;
+    }
+} 
+
+// Classe Locacao.java 
+import java.util.Iterator;
+
+public class Locacao implements Iterable<Veiculo>{
 
     public Veiculo[] vetorVeiculo;
 
@@ -28,32 +65,18 @@ public class Locacao implements Iterator{
         this.vetorVeiculo = vetorVeiculo;
     }
 
-    //Padrão Iterator onde as classes menorQLM() e qtdMotos() da classe Iterator irão percorrer pelo objeto Veiculo para saber a menor quilometragem e quantas motos, e retorna essa informação pela variavel aux implementada em ambas as classes.
+    //Padrão Iterator onde as classes menorQLM() e qtdMotos() da classe Iterator irão percorrer pelo objeto para saber o menor
+    //quilometro e quantas motos e retorna essa informação pela variavel aux implementada em ambas as classes.
 
     @Override
-    public double menorQLM(){
-        double aux = vetorVeiculo[0].getQlm_rodados();
-
-        for (int i = 0; i < vetorVeiculo.length; i++){
-            if(vetorVeiculo[i].getQlm_rodados() < aux){
-                aux = vetorVeiculo[i].getQlm_rodados();
-            }
-        }
-        return aux;
-    }
-    @Override
-    public int qtdMotos(){
-        int aux = 0;
-        
-        for (int i = 0; i < vetorVeiculo.length; i++){
-            if (vetorVeiculo[i] instanceof Moto){
-                aux++;
-            }
-        }return aux;
+    public Iterator<Veiculo> iterator(){
+        return new LocacaoIterator(this.vetorVeiculo);
     }
 
 }
+
 ```
+### Fim do Exemplo Iterator
 
 ``` Java
     public abstract class Veiculo{

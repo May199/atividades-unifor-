@@ -5,38 +5,14 @@ public class Principal {
         Scanner s = new Scanner(System.in);
 
 
-        System.out.println("Informe a quantidade de veiculos: ");
-        int qtd = 5;
+        Veiculo[] vetorVeiculo = new Veiculo[5];
 
-        Veiculo[] vetorVeiculo = new Veiculo[qtd];
-
-        for(int i = 0; i < vetorVeiculo.length; i++){
-            double rando = Math.random();
-
-            if(rando < 0.5){
-                System.out.println("Informe o nome do veiculo:  ");
-                String nome_veiculo = s.next();
-                System.out.println("Informe quantos estão disponíveis: ");
-                int qtd_disponivel = s.nextInt();
-                System.out.println("Informe a quilometragem: ");
-                double qlm_rodados = s.nextDouble();
-                System.out.println("Informe a quantidade de portas: ");
-                int num_portas = s.nextInt();
-                vetorVeiculo[i] = new Carro(nome_veiculo, qtd_disponivel, qlm_rodados, num_portas);
-
-            }else {
-                System.out.println("Informe o nome do veiculo:  ");
-                String nome_veiculo = s.next();
-                System.out.println("Informe quantos estão disponíveis: ");
-                int qtd_disponivel = s.nextInt();
-                System.out.println("Informe a quilometragem: ");
-                double qlm_rodados = s.nextDouble();
-                System.out.println("É espotiva? True/False");
-                boolean tipo_moto = s.nextBoolean();
-                vetorVeiculo[i] = new Moto(nome_veiculo, qtd_disponivel, qlm_rodados, tipo_moto);
-            }
-        }
-
+        vetorVeiculo[0] = new Moto("Moto 1", 3, 5000, true);
+        vetorVeiculo[1] = new Carro("Carro 1", 3, 10000, 4);
+        vetorVeiculo[2] = new Moto("Moto 2", 3, 4000, false);
+        vetorVeiculo[3] = new Carro("Carro 2", 3, 15000, 2);
+        vetorVeiculo[4] = new Moto("Moto 3", 3, 6000, true);
+        
         Locacao locacao = new Locacao(vetorVeiculo);
 
         double menorQLM = locacao.getVetorVeiculo()[0].getQlm_rodados();

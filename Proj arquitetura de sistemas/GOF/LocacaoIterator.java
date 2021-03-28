@@ -12,7 +12,7 @@ public class LocacaoIterator implements Iterator<Veiculo>{
     }
     @Override
     public boolean hasNext(){
-        if(vetorVeiculo == null){
+        if(vetorVeiculo == null || vetorVeiculo.length == index){
             return false;
         }
         return vetorVeiculo[index] != null;
