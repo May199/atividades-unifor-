@@ -44,20 +44,20 @@ function Client() {
             switch (_e.label) {
                 case 0:
                     user = new system_user_proxy_1.ProxyHandler('Manu', 'May');
-                    console.log('Leva 1 segundo');
+                    console.log('Consultando objeto pedido do usuário: ', user.username);
                     _b = (_a = console).log;
                     return [4 /*yield*/, user.getAddress()];
                 case 1:
-                    _b.apply(_a, [_e.sent(), user.name, user.username]);
-                    console.log('CACHE');
+                    _b.apply(_a, [_e.sent()]);
                     i = 0;
                     _e.label = 2;
                 case 2:
                     if (!(i < 4)) return [3 /*break*/, 5];
+                    console.log('Memória Cache');
                     _d = (_c = console).log;
                     return [4 /*yield*/, user.getAddress()];
                 case 3:
-                    _d.apply(_c, [_e.sent(), user.name, user.username]);
+                    _d.apply(_c, [_e.sent()]);
                     _e.label = 4;
                 case 4:
                     i++;
