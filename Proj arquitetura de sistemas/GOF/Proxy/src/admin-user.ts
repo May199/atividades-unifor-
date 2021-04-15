@@ -13,7 +13,9 @@ export class AdminUser implements SystemUser{
         return new Promise<Address[]>((resolve) => {
             return setTimeout(() =>{
                 return resolve([
-                    {street: 'Rua mil e um', number: 10}
+                    {street: 'Rua mil e um', number: 10},
+                    {street: 'Rua mil e dois', number: 11},
+                    {street: 'Rua mil e três', number: 12}
                 ])
             }, 1000);
         })

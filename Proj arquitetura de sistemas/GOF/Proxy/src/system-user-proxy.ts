@@ -21,6 +21,10 @@ export class ProxyHandler implements SystemUser{
     }
     async getAddress(): Promise<Address[]> { 
         this.User = this.CreateUser();
+
+        if(this.UserAddress === null) {
+            this.UserAddress = await this.User.getAddress();
+        }
         return this.User.getAddress();
     }
 }
