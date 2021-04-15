@@ -19,7 +19,7 @@
 
 ``` TypeScript 
 
-    import {Address, SystemUser} from './system-user-protocol';
+import {Address, SystemUser} from './system-user-protocol';
 import {AdminUser} from './admin-user';
 
 export class ProxyHandler implements SystemUser{
