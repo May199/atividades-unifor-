@@ -7,9 +7,12 @@
 
 - Proxy Virtual: controla acesso a recursos que podem ser caros para criação ou utilização. Basicamente, cria um cache para responder a consultas posteriores mais rápidamente. 
 
-    > Antes de proceguir com as modificações do código, é necessário converter o TS para JS usando o código abaixo. 
+> Antes de proceguir com as modificações do código, é necessário converter o TS para JS usando o código abaixo.
+
     $ tsc src/main.ts 
-    > Se caso não queira modificar e só queira ver o resultado pode utilizar os arquivos JS já convertidos. 
+
+> Se caso não queira modificar e só queira ver o resultado pode utilizar os arquivos JS já convertidos. 
+
     $ node src/main.js
 
 > A classe `ProxyHandler` simula a criação de um usuário e manipula as informações da classe `AdminUser` criando assim um substituto para o objeto original `AdminUser`
