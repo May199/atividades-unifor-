@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Nivelamento.AlgoritmosJava;
 
+import java.util.Scanner;
 public class Alg_Fund_6_Fibonacci {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);

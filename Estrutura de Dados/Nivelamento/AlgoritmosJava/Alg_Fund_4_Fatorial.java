@@ -1,3 +1,5 @@
+package Nivelamento.AlgoritmosJava;
+
 import java.util.Scanner;
 
 public class Alg_Fund_4_Fatorial {

@@ -1,7 +1,7 @@
+package Nivelamento.AlgoritmosJava;
+
 import java.util.Scanner;
 import java.lang.Math; 
-
-
 public class Alg_Fund_5_Seno {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
