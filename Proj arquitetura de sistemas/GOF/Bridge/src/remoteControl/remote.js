@@ -1,7 +1,8 @@
 "use strict";
 exports.__esModule = true;
 exports.RemoteControl = void 0;
-// a class RemoteControl seria uma abstrção pois ela apenas manda executar e não executa, quem executa é o dispositivo. 
+// a class RemoteControl seria uma abstrção pois ela apenas manda executar e não executa, 
+// quem executa é o dispositivo. 
 var RemoteControl = /** @class */ (function () {
     function RemoteControl(apparatus) {
         this.apparatus = apparatus;
