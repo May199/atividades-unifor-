@@ -39,5 +39,14 @@ public class Pilha {
 		}
 		return elementos[topo];
 	}
+	public int size() {
+		int tam = 0;
+
+		for(int i = 0; i < elementos.length; i++){
+			tam += elementos[i];
+		}
+
+		return tam;
+	}
 	
 }
