@@ -5,6 +5,7 @@ public class Solution {
     public static void main(String[] args) {
         // Fonte: https://www.devmedia.com.br/diferencas-entre-treeset-hashset-e-linkedhashset-em-java/29077
         // O TreeSet implementa um algoritmo conhecido por red-black tree ou árvore rubro-negra. 
+        
         TreeSet<Integer> pilha = new TreeSet<Integer>();
         Scanner s = new Scanner(System.in);
 
